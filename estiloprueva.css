@@ -1,0 +1,161 @@
+/* ------------------------------
+   ESTILOS GENERALES
+------------------------------ */
+body {
+    font-family: "Roboto Mono", monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ------------------------------
+   HEADER
+------------------------------ */
+.header {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.header .logo i {
+    font-size: 1.5rem;
+}
+
+/* NAV */
+.nav {
+    margin-top: 1rem;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-list li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: opacity 0.2s ease;
+}
+
+.nav-list li a:hover {
+    opacity: 0.7;
+}
+
+/* HAMBURGER MENU (MÓVIL) */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.overlay {
+    display: none;
+}
+
+/* ------------------------------
+   ASIDE
+------------------------------ */
+aside {
+    background-color: #fff;
+    padding: 1rem;
+    min-height: 200px;
+    border-right: 1px solid #ddd;
+}
+
+/* ------------------------------
+   MAIN
+------------------------------ */
+main {
+    padding: 2rem 1rem;
+    min-height: 60vh;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+footer nav a {
+    color: #fff;
+    margin: 0 0.5rem;
+    transition: opacity 0.2s ease;
+}
+
+footer nav a:hover {
+    opacity: 0.7;
+}
+
+/* ------------------------------
+   RESPONSIVE
+------------------------------ */
+@media (max-width: 768px) {
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        width: 250px;
+        background-color: #222;
+        flex-direction: column;
+        padding-top: 5rem;
+        transition: right 0.3s ease;
+    }
+
+    .menu-toggle:checked ~ .nav .nav-list {
+        right: 0;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 1.2rem;
+        right: 1.2rem;
+    }
+
+    .overlay {
+        display: none;
+    }
+
+    .menu-toggle:checked ~ .overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+    }
+}
