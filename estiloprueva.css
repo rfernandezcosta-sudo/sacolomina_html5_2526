@@ -27,10 +27,15 @@ a {
     background-color: rgb(0, 149, 255);
     color: #fff;
     padding: 1rem 0;
-    position: relative;
 }
 
-.header .logo {
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -38,15 +43,11 @@ a {
     font-weight: bold;
 }
 
-.header .logo i {
+.logo i {
     font-size: 1.5rem;
 }
 
 /* NAV */
-.nav {
-    margin-top: 1rem;
-}
-
 .nav-list {
     list-style: none;
     display: flex;
@@ -65,7 +66,7 @@ a {
     opacity: 0.7;
 }
 
-/* HAMBURGER MENU (MÓVIL) */
+/* HAMBURGER MENU */
 .menu-toggle {
     display: none;
 }
@@ -77,31 +78,30 @@ a {
     color: #fff;
 }
 
-.overlay {
-    display: none;
+/* ------------------------------
+   LAYOUT PRINCIPAL
+------------------------------ */
+.layout {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
-/* ------------------------------
-   ASIDE
------------------------------- */
-aside {
-    background-color: #fff;
+.sidebar {
+    width: 200px;
+    background: #fff;
     padding: 1rem;
-    min-height: 200px;
     border-right: 1px solid #ddd;
 }
 
-/* ------------------------------
-   MAIN
------------------------------- */
 main {
-    padding: 2rem 1rem;
-    min-height: 60vh;
-}
-.products {
-    width: 100%;
+    flex: 1;
+    padding: 1rem;
 }
 
+/* ------------------------------
+   PRODUCTOS
+------------------------------ */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -195,6 +195,14 @@ footer nav a:hover {
 ------------------------------ */
 @media (max-width: 768px) {
 
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
     .nav-list {
         position: fixed;
         top: 0;
@@ -213,19 +221,5 @@ footer nav a:hover {
 
     .hamburger {
         display: block;
-        position: absolute;
-        top: 1.2rem;
-        right: 1.2rem;
-    }
-
-    .overlay {
-        display: none;
-    }
-
-    .menu-toggle:checked ~ .overlay {
-        display: block;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.5);
     }
 }

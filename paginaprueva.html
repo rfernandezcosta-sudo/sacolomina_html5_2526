@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema</title>
 
-    <!-- CSS DE LOS COMPONENTES PRINCIPALES DE LA PÁGINA -->
-    <link rel="stylesheet" href="estiloprueva.css">
-
-    <!-- ESTILOS GENERALES Y BASE -->
-    <link rel="stylesheet" href="estiloprueva.css">
-
-    <!-- CSS DEL CONTENIDO DE CADA PÁGINA ESPECÍFICO -->
+    <!-- CSS PRINCIPAL -->
     <link rel="stylesheet" href="estiloprueva.css">
 
     <!-- FAVICON -->
@@ -23,39 +17,37 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <i class="bi bi-shop"></i>
-                <span>Tema</span>
-            </div>
-
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <div class="overlay"></div>
-            
-            <label for="menu-toggle" class="hamburger">
-                <i class="bi bi-list"></i>
-            </label>
-
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="./paginaprueva.html"><i class="bi bi-house"></i><span>Inicio</span></a></li>
-                    <li><a href="./pages/about.html"><i class="bi bi-person-raised-hand"></i><span>About</span></a></li>
-                    <li><a href="./pages/login.html"><i class="bi bi-door-open"></i><span>Login</span></a></li>
-                    <li><a href="./Inicio_sesion.html"><i class="bi bi-box-arrow-in-right"></i><span>SignUp</span></a></li>
-                </ul>
-            </nav>
+<header class="header">
+    <div class="container header-container">
+        <div class="logo">
+            <i class="bi bi-shop"></i>
+            <span>Tema</span>
         </div>
-    </header>
 
-    <div class="container" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-    <aside>
-        <!-- Contenido opcional del aside -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+            <i class="bi bi-list"></i>
+        </label>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="./paginaprueva.html"><i class="bi bi-house"></i><span>Inicio</span></a></li>
+                <li><a href="./pages/about.html"><i class="bi bi-person-raised-hand"></i><span>About</span></a></li>
+                <li><a href="./pages/login.html"><i class="bi bi-door-open"></i><span>Login</span></a></li>
+                <li><a href="./Inicio_sesion.html"><i class="bi bi-box-arrow-in-right"></i><span>SignUp</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container layout">
+    <aside class="sidebar">
+        <!-- Contenido opcional -->
     </aside>
 
     <main>
@@ -75,7 +67,7 @@
                         </div>
                     </div>
                 </article>
-                
+
                 <article class="product-card">
                     <div class="product-image"></div>
                     <div class="product-info">
@@ -89,47 +81,21 @@
                         </div>
                     </div>
                 </article>
-                <article class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-info">
-                        <h3 class="product-title">Producto</h3>
-                        <p class="product-description">Descripción breve del producto</p>
-                        <div class="product-footer">
-                            <span class="product-price">$00.00</span>
-                            <button class="product-btn">
-                                <i class="bi bi-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-info">
-                        <h3 class="product-title">Producto</h3>
-                        <p class="product-description">Descripción breve del producto</p>
-                        <div class="product-footer">
-                            <span class="product-price">$00.00</span>
-                            <button class="product-btn">
-                                <i class="bi bi-cart-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- más product-card aquí -->
+
+                <!-- Más product-card aquí -->
 
             </div>
         </section>
     </main>
 </div>
 
-
-    <footer>
-        <p>&copy; Tema - Todos los derechos reservados.</p>
-        <nav>
-            <a href="./pages/aviso-legal.html">Privacidad</a> | 
-            <a href="./pages/cookies.html">Cookies</a>
-        </nav>
-    </footer>
+<footer>
+    <p>&copy; Tema - Todos los derechos reservados.</p>
+    <nav>
+        <a href="./pages/aviso-legal.html">Privacidad</a> | 
+        <a href="./pages/cookies.html">Cookies</a>
+    </nav>
+</footer>
 
 </body>
 </html>
