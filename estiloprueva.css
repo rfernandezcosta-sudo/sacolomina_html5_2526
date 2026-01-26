@@ -1,40 +1,48 @@
 /* ------------------------------
-   ESTILOS GENERALES
+   GENERALES
 ------------------------------ */
+
+/* Estilo base del documento */
 body {
-    font-family: "Roboto Mono", monospace;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    font-family: "Roboto Mono", monospace; /* Fuente principal */
+    margin: 0; /* Quita márgenes del navegador */
+    background: #f5f5f5; /* Fondo gris claro */
+    color: #333; /* Texto gris oscuro */
 }
 
+/* Enlaces sin subrayado */
 a {
     text-decoration: none;
-    color: inherit;
+    color: inherit; /* Hereda el color del padre */
 }
 
+/* Contenedor centrado y con ancho máximo */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 90%;
+    margin: auto;
     padding: 0 1rem;
-}
-
-img{
-    width: 20rem;
 }
 
 /* ------------------------------
    HEADER
 ------------------------------ */
+
+/* Barra superior */
 .header {
-    background-color: rgb(0, 149, 255);
+    background: rgb(0, 149, 255); /* Azul */
     color: #fff;
     padding: 1rem 0;
-    position: relative;
 }
 
-.header .logo {
+/* Flexbox para alinear logo + menú */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo con icono */
+.logo {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -42,124 +50,178 @@ img{
     font-weight: bold;
 }
 
-.header .logo i {
-    font-size: 1.5rem;
-}
-
-/* NAV */
-.nav {
-    margin-top: 1rem;
-}
-
+/* Lista del menú */
 .nav-list {
     list-style: none;
     display: flex;
     gap: 1.5rem;
 }
 
-.nav-list li a {
-    color: #fff;
+/* Enlaces del menú */
+.nav-list a {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    transition: opacity 0.2s ease;
+    transition: opacity .2s;
 }
 
-.nav-list li a:hover {
-    opacity: 0.7;
+.nav-list a:hover {
+    opacity: .7;
 }
 
-/* HAMBURGER MENU (MÓVIL) */
+/* Checkbox oculto que controla el menú móvil */
 .menu-toggle {
     display: none;
 }
 
+/* Icono hamburguesa (solo móvil) */
 .hamburger {
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
-    color: #fff;
-}
-
-.overlay {
-    display: none;
 }
 
 /* ------------------------------
-   ASIDE
+   LAYOUT
 ------------------------------ */
-aside {
-    background-color: #fff;
+
+/* Contenedor principal con aside + main */
+.layout {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 200px;
+    background: #fff;
     padding: 1rem;
-    min-height: 200px;
     border-right: 1px solid #ddd;
 }
 
-/* ------------------------------
-   MAIN
------------------------------- */
+/* Contenido principal */
 main {
-    padding: 2rem 1rem;
-    min-height: 60vh;
+    flex: 1; /* Ocupa todo el espacio disponible */
+}
+
+/* ------------------------------
+   PRODUCTOS
+------------------------------ */
+
+/* Grid responsive de tarjetas */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tarjeta de producto */
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: .2s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Imagen del producto */
+.product-image {
+    height: 15rem;
+    background: linear-gradient(135deg, #eaeaea, #d5d5d5);
+}
+
+/* Información del producto */
+.product-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+/* Pie de la tarjeta */
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Precio */
+.product-price {
+    font-weight: bold;
+    color: #e60023;
+}
+
+/* Botón de añadir al carrito */
+.product-btn {
+    background: #e60023;
+    color: #fff;
+    border: none;
+    padding: .4rem .6rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.product-btn:hover {
+    background: #c8001f;
 }
 
 /* ------------------------------
    FOOTER
 ------------------------------ */
+
 footer {
-    background-color: #222;
+    background: #222;
     color: #fff;
     text-align: center;
     padding: 1.5rem 0;
     margin-top: 2rem;
 }
 
-footer nav a {
-    color: #fff;
-    margin: 0 0.5rem;
-    transition: opacity 0.2s ease;
-}
-
 footer nav a:hover {
-    opacity: 0.7;
+    opacity: .7;
 }
 
 /* ------------------------------
    RESPONSIVE
 ------------------------------ */
+
 @media (max-width: 768px) {
 
+    /* Aside debajo del contenido */
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    /* Menú móvil oculto a la derecha */
     .nav-list {
         position: fixed;
         top: 0;
         right: -100%;
         height: 100%;
         width: 250px;
-        background-color: #222;
+        background: #222;
         flex-direction: column;
         padding-top: 5rem;
-        transition: right 0.3s ease;
+        transition: right .3s;
     }
 
+    /* Cuando el checkbox está activado, el menú aparece */
     .menu-toggle:checked ~ .nav .nav-list {
         right: 0;
     }
 
+    /* Mostrar icono hamburguesa */
     .hamburger {
         display: block;
-        position: absolute;
-        top: 1.2rem;
-        right: 1.2rem;
-    }
-
-    .overlay {
-        display: none;
-    }
-
-    .menu-toggle:checked ~ .overlay {
-        display: block;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.5);
     }
 }
