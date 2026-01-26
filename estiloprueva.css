@@ -213,7 +213,7 @@ footer nav a:hover {
     .nav-list {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: -1                                                                                                                                                                       00%;
         height: 100%;
         width: 250px;
         background-color: #222;
