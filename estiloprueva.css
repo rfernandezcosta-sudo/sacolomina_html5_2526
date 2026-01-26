@@ -179,13 +179,11 @@ footer {
     background: #222;
     color: #fff;
     text-align: center;
-    padding: 2rem 0;
+    padding: 2rem ;
     margin-top: 11rem;
 }
 
-footer nav a:hover {
-    opacity: .7;
-}
+
 
 /* ------------------------------
    RESPONSIVE
