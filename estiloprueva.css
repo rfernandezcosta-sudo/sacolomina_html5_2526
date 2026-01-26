@@ -49,6 +49,11 @@ a {
     font-size: 1.3rem;
     font-weight: bold;
 }
+.img {
+    height: 4rem;
+    background-color: #ddd;
+    border-radius:200px;
+}
 
 /* Lista del menú */
 .nav-list {
@@ -132,8 +137,12 @@ main {
 
 /* Imagen del producto */
 .product-image {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 15rem;
-    background: linear-gradient(135deg, #eaeaea, #d5d5d5);
+    
 }
 
 /* Información del producto */
@@ -180,7 +189,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 2rem ;
-    padding-bottom: 100%;
+    padding-bottom: 2rem;
     margin-top: 11rem;
 }
 
