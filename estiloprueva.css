@@ -232,5 +232,7 @@ footer {
     /* Mostrar icono hamburguesa */
     .hamburger {
         display: block;
+        position: absolute;
+        right: 1rem;
     }
 }
