@@ -20,6 +20,10 @@ a {
     padding: 0 1rem;
 }
 
+img{
+    width: 20rem;
+}
+
 /* ------------------------------
    HEADER
 ------------------------------ */
@@ -27,15 +31,10 @@ a {
     background-color: rgb(0, 149, 255);
     color: #fff;
     padding: 1rem 0;
+    position: relative;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
+.header .logo {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -43,11 +42,15 @@ a {
     font-weight: bold;
 }
 
-.logo i {
+.header .logo i {
     font-size: 1.5rem;
 }
 
 /* NAV */
+.nav {
+    margin-top: 1rem;
+}
+
 .nav-list {
     list-style: none;
     display: flex;
@@ -66,7 +69,7 @@ a {
     opacity: 0.7;
 }
 
-/* HAMBURGER MENU */
+/* HAMBURGER MENU (MÓVIL) */
 .menu-toggle {
     display: none;
 }
@@ -78,102 +81,26 @@ a {
     color: #fff;
 }
 
-/* ------------------------------
-   LAYOUT PRINCIPAL
------------------------------- */
-.layout {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
+.overlay {
+    display: none;
 }
 
-.sidebar {
-    width: 200px;
-    background: #fff;
+/* ------------------------------
+   ASIDE
+------------------------------ */
+aside {
+    background-color: #fff;
     padding: 1rem;
+    min-height: 200px;
     border-right: 1px solid #ddd;
 }
 
-main {
-    flex: 1;
-    padding: 1rem;
-}
-
 /* ------------------------------
-   PRODUCTOS
+   MAIN
 ------------------------------ */
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    /* repeat evita tener que escribir mas columnas
-    auto-fill:El navegador crea tantas columnas como quepan en el ancho disponible.
-    minmax: determina lo grande que es cada columna
-    fr: significa francion del espacio disponioble*/
-    gap: 1.5rem;
-}
-
-.product-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    /*sirve para que si la foto sale fuera del contenedor se recorta*/
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-4px);
-    /*esto hace que se mueva la carta*/
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    /*crea la sobra al moverse*/
-}
-
-.product-image {
-    width: 100%;
-    height: 160px;
-    
-}
-
-.product-info {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.product-title {
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.product-description {
-    font-size: 0.85rem;
-    color: #666;
-}
-
-.product-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-}
-
-.product-price {
-    font-weight: bold;
-    color: #e60023;
-}
-
-.product-btn {
-    border: none;
-    background: #e60023;
-    color: #fff;
-    padding: 0.4rem 0.6rem;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.product-btn:hover {
-    background: #c8001f;
+main {
+    padding: 2rem 1rem;
+    min-height: 60vh;
 }
 
 /* ------------------------------
@@ -202,18 +129,10 @@ footer nav a:hover {
 ------------------------------ */
 @media (max-width: 768px) {
 
-    .layout {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
-
     .nav-list {
         position: fixed;
         top: 0;
-        right: -1                                                                                                                                                                       00%;
+        right: -100%;
         height: 100%;
         width: 250px;
         background-color: #222;
@@ -228,5 +147,19 @@ footer nav a:hover {
 
     .hamburger {
         display: block;
+        position: absolute;
+        top: 1.2rem;
+        right: 1.2rem;
+    }
+
+    .overlay {
+        display: none;
+    }
+
+    .menu-toggle:checked ~ .overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
     }
 }
