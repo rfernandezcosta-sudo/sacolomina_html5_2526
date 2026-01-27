@@ -1,72 +1,64 @@
-/* ------------------------------
-   GENERALES
------------------------------- */
+/* ==============================
+   ESTILOS GENERALES
+============================== */
 
-/* Estilo base del documento */
 body {
-    font-family: "Roboto Mono", monospace; /* Fuente principal */
-    margin: 0; /* Quita márgenes del navegador */
-    background: #f5f5f5; /* Fondo gris claro */
-    color: #333; /* Texto gris oscuro */
+    margin: 0;
+    font-family: "Roboto Mono", monospace;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
-/* Enlaces sin subrayado */
 a {
     text-decoration: none;
-    color: inherit; /* Hereda el color del padre */
+    color: inherit;
 }
 
-/* Contenedor centrado y con ancho máximo */
 .container {
     max-width: 90%;
     margin: auto;
     padding: 0 1rem;
 }
 
-/* ------------------------------
+/* ==============================
    HEADER
------------------------------- */
+============================== */
 
-/* Barra superior */
 .header {
-    background: rgb(0, 149, 255); /* Azul */
+    background-color: rgb(0, 149, 255);
     color: #fff;
     padding: 1rem 0;
 }
 
-/* Flexbox para alinear logo + menú */
 .header-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Logo con icono */
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-.img {
-    height: 4rem;
-    background-color: #ddd;
-    border-radius:200px;
+    gap: .5rem;
 }
 
-/* Lista del menú */
+.img {
+    height: 4rem;
+    border-radius: 50%;
+}
+
+/* ----- Navegación ----- */
+
 .nav-list {
     list-style: none;
     display: flex;
     gap: 1.5rem;
 }
 
-/* Enlaces del menú */
 .nav-list a {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: .4rem;
     transition: opacity .2s;
 }
 
@@ -74,102 +66,105 @@ a {
     opacity: .7;
 }
 
-/* Checkbox oculto que controla el menú móvil */
 .menu-toggle {
     display: none;
 }
 
-/* Icono hamburguesa (solo móvil) */
 .hamburger {
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
 }
 
-/* ------------------------------
+/* ==============================
    LAYOUT
------------------------------- */
+============================== */
 
-/* Contenedor principal con aside + main */
 .layout {
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
 }
 
-/* Barra lateral */
-.sidebar {
-    width: 200px;
-    background: #fff;
-    padding: 1rem;
-    border-right: 1px solid #ddd;
-}
-
-/* Contenido principal */
 main {
-    flex: 1; /* Ocupa todo el espacio disponible */
+    flex: 1;
 }
 
-/* ------------------------------
+/* ==============================
    PRODUCTOS
------------------------------- */
+============================== */
 
-/* Grid responsive de tarjetas */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1.5rem;
 }
 
-/* Tarjeta de producto */
+/* ----- Tarjeta ----- */
+
 .product-card {
-    background: #fff;
+    background-color: #fff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: .2s;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    transition: transform .2s, box-shadow .2s;
 }
 
 .product-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
 }
 
-/* Imagen del producto */
+/* ----- Imagen ----- */
+
 .product-image {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 15rem;
     width: 100%;
-    
+    height: 15rem;
+    object-fit: cover;
 }
 
-/* Información del producto */
+/* ----- Información ----- */
+
 .product-info {
     padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    flex-grow: 1;
 }
 
-/* Pie de la tarjeta */
+
+.product-title {
+    font-size: 1rem;
+    line-height: 1.3;
+    height: 2.6em;        
+    overflow: hidden;
+}
+
+/* Descripción */
+.product-description {
+    min-height: 4.5em;
+    font-size: .9rem;
+}
+
+/* ----- Footer de la tarjeta ----- */
+
 .product-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto;
 }
 
-/* Precio */
 .product-price {
     font-weight: bold;
     color: #e60023;
 }
 
-/* Botón de añadir al carrito */
 .product-btn {
-    background: #e60023;
+    background-color: #e60023;
     color: #fff;
     border: none;
     padding: .4rem .6rem;
@@ -178,58 +173,47 @@ main {
 }
 
 .product-btn:hover {
-    background: #c8001f;
+    background-color: #c8001f;
 }
 
-/* ------------------------------
+/* ==============================
    FOOTER
------------------------------- */
+============================== */
 
 footer {
-    background: #222;
+    margin-top: 3rem;
+    background-color: #222;
     color: #fff;
     text-align: center;
-    padding: 2rem ;
-    padding-bottom: 2rem;
-    margin-top: 11rem;
+    padding: 2rem;
 }
 
-
-
-/* ------------------------------
+/* ==============================
    RESPONSIVE
------------------------------- */
+============================== */
 
 @media (max-width: 768px) {
 
-    /* Aside debajo del contenido */
     .layout {
         flex-direction: column;
     }
 
-    .sidebar {
-        width: 100%;
-    }
-
-    /* Menú móvil oculto a la derecha */
     .nav-list {
         position: fixed;
         top: 0;
         right: -100%;
-        height: 100%;
         width: 250px;
-        background: #222;
+        height: 100%;
+        background-color: #222;
         flex-direction: column;
         padding-top: 5rem;
         transition: right .3s;
     }
 
-    /* Cuando el checkbox está activado, el menú aparece */
     .menu-toggle:checked ~ .nav .nav-list {
         right: 0;
     }
 
-    /* Mostrar icono hamburguesa */
     .hamburger {
         display: block;
         position: absolute;
