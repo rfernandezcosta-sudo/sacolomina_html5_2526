@@ -3,10 +3,18 @@
 ============================== */
 
 body {
-    margin: 0;
+    width: 100%;
+    min-height: 100vh;
     font-family: "Roboto Mono", monospace;
     background-color: #f5f5f5;
     color: #333;
+
+    display: grid;
+    grid-template-areas: 'header'
+                          'main'
+                          'footer';
+    grid-template-rows: auto 1fr auto;
+    
 }
 
 a {
@@ -16,7 +24,7 @@ a {
 
 .container {
     max-width: 90%;
-    margin: auto;
+    
     padding: 0 1rem;
 }
 
@@ -28,6 +36,7 @@ a {
     background-color: rgb(0, 149, 255);
     color: #fff;
     padding: 1rem 0;
+    grid-area: header;
 }
 
 .header-flex {
@@ -87,7 +96,12 @@ a {
 }
 
 main {
-    flex: 1;
+    grid-area: main;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
 }
 
 /* ==============================
@@ -95,9 +109,13 @@ main {
 ============================== */
 
 .products-grid {
+    width: 80%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: .5rem;
+       justify-content: center; /* ← ESTO */
+    
+
 }
 
 /* ----- Tarjeta ----- */
