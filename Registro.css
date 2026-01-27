@@ -35,9 +35,8 @@ label{
     font-size: 23px;
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%;
+input {
+    width: 70%;
     padding: 8px;
     margin-top: 5px;
 }
